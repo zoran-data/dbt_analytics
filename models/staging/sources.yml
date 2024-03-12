@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: analytics
+    database: analytics-414920
+    schema: ecommerce
+    tables:
+      - name: distribution_centers
+        identifier: distribution_centers
+      - name: events
+        identifier: events
+      - name: inventory_items
+        identifier: inventory_items
+      - name: order_items
+        identifier: order_items
+      - name: orders
+        identifier: orders
+      - name: products
+        identifier: products
+      - name: users
+        identifier: users
