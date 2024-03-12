@@ -5,11 +5,11 @@
 {{ config(
     materialized='view',
     schema='dbt_models',
-    alias='distribution_centers'
+    alias='events'
 ) }}
 
 -- Query to select data from the source table and insert into the staging table
 select
     *
 from
-    {{ source('analytics', 'distribution_centers') }}
+    {{ source('analytics', 'events') }}
