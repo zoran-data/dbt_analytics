@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'my_new_project'
+name: 'dbt_big_query'
 version: '1.0.0'
 config-version: 2
 
@@ -36,7 +36,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  my_new_project:
-    # Applies to all files under models/example/
-    example:
-      +materialized: table
+  dbt_big_query:
+    1_staging:
+        schema: internal_staging
+        materialized: view
+        +docs:
+          node_color: "green" 
+    2_analytics_models:
+        schema: analytics_models
+        materialized: table
+        +docs:
+          node_color: "gold"
+    
